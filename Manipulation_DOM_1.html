@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Manipultion_du_Dom</title>
+</head>
+<body>
+
+
+	<style type="text/css">
+		
+		.blue{
+
+			background: blue;
+			color: white;
+		}
+	</style>
+
+	<div id="myColorDiv">
+		
+		<p>Dans cet exemple, on définit la classe CSS.blueà l'élément myColorDiv, ce qui fait que cet élément sera affiché avec un arrière-plan bleu et un texte blanc<a class="ecternal red u"></a></p>
+	</div>
+
+
+	<a id="myLink" href="https://www.codingame.com">Un lien modifié dynamiquement</a>
+
+
+	<script type="text/javascript">
+
+		var link = document.getElementById('myLink');
+		var href = link.getAttribute('href'); // On recupere l'attribut "href"
+
+		alert(href);
+
+		link.setAttribute('href','https://www.codingame.com'); // On édidte l'attribut "href"
+
+		document.getElementById('myColorDiv').className = 'blue';
+
+
+		var classes = document.getElementById('myLink').className;
+
+		var classesNew = [];
+
+		classes = classes.split(' ');
+
+		for(var i = 0, c = classes.length; i < c; i++){
+
+			if(classes[i]){
+				classesNew.push(classes[i]);
+			}
+		}
+
+
+		alert(classesNew);
+
+
+		var div = document.querySelector('div');
+
+		// Ajoute une nouvelle classe
+
+		div.classList.add('new-class');
+
+		// Retire une classe
+
+		div.classList.remove('new-class');
+
+
+
+		// Retire une classe si elle est présente ou bien l'ajoute si elle est absente 
+
+		div.classList.toggle('toggle-class');
+
+
+
+
+
+		// Indique si une classe est présente ou non 
+
+
+		if(div.classList.contains('old-class')){
+
+			alert('La classe .old-class est présente !');
+		}
+
+
+
+		// Parcours et affiche les classes CSS 
+
+
+		var result ='';
+
+		for( var i = 0; i < div.classList.length; i++){
+
+			result += '.' + div.classList[i] + '\n';
+		}
+
+		alert(result);
+
+
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>
