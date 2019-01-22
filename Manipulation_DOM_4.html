@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Manipulation_du_DOM</title>
+
+
+</head>
+<body>
+<!--Navigation du DOM -->
+	<div>
+		
+		<p id="myP">Un peu de texte <a>et un lien </a></p>
+	</div>
+
+	<script type="text/javascript">
+		
+		var paragraph = document.getElementById('myP');
+		var children = paragraph.childNodes;
+
+			for(var i = 0, c = children.length; i < c; i++){
+
+				if (children[i].nodeType === Node.ELEMENT_NODE){ // c'est un élément HTML
+
+					alert(children[i].firstChild.data);
+				}else{ // c'est certainement un noeuds textuel
+
+
+					alert(children[i].data);
+
+
+				}
+			}
+
+
+
+
+
+	</script>
+
+</body>
+</html>

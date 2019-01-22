@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Creation du contenu dans le DOM</title>
+</head>
+<body>
+
+	<div>
+		<p id="myP">Un peu de texte <a>et un lien </a>
+	</div>
+	<script type="text/javascript">
+
+
+		var newLink = document.createElement('a');
+		var newLinkText = document.createTextNode("Devenir DEV")
+
+			newLink.id = 'sdz_link';
+			newLink.href = 'http://www.codegaming.com';
+			newLink.title = 'Decouvrez le site du zero !';
+			newLink.setAttribute('tabindex','10');
+
+
+			document.getElementById('myP').appendChild(newLink);
+
+			var newLinkText = document.createTextNode("Coucou c' est moi ");
+
+
+			newLink.appendChild(newLinkText);
+
+			document.getElementById('myP').appendChild(newLink);
+
+		
+		
+
+
+	</script>
+
+
+</body>
+</html>
