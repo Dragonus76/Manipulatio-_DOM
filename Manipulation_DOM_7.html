@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+	<div>
+		
+		<p id="myP">Un peu de texte <a href="www.google.fr">Et top le lien </a>
+	</div>
+
+
+	 <script type="text/javascript">
+
+
+	 	// Vérifier la présence d'éléments enfants
+
+
+	 	var paragraph = document.querySelector('p');
+
+	 	//Insérer à la bonne place : insertBefore()
+
+	 	var emphasis = document.createElement('em'),
+
+	 		emphasisText = document.createTextNode('en emphase légère');
+
+
+	 	alert(paragraph.hasChildNodes()); // Affiche true 
+	 	
+	 	// Insérer à la bonne place : insertBefore()
+
+	 	emphasis.appendChild(emphasisText);
+
+	 	paragraph.insertBefore(emphasis, paragraph.lastChild);
+
+
+	 	function insertAfter(newElement, afterElement){
+
+	 		var parent =  afterElement.parentNode;
+
+	 		if(parent.lastChild === afterElement){ // Si le dernier élément es le même que l'élément après lequel on veut insérer, il suffit de faire appendeChild()
+
+	 			parent.appendeChild(newElement);
+
+
+	 		}else{ // Dans le cas contraire, on fait insertBefore() sur l'élément suivant 
+
+
+	 		parent.insertBefore(newElement, afterElement.nextSibling);
+
+
+	 		}
+	 	}
+
+
+
+	 </script>
+
+</body>
+</html>

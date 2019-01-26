@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TP_Manipulation_du_DOM</title>
+</head>
+<body>
+
+	<!--
+
+	<div id="divTP2">
+
+		<p>Languages basés sur ECMAScript :</p>
+
+		<ul>
+			<li>Javascript</li>
+			<li>Jscript</li>
+			<li>ActionScript</li>
+			<li>EX4</li>
+		</ul>
+
+	</div>
+
+-->
+
+	<script type="text/javascript"> 
+
+		// On crée l'élément conteneur 
+
+		var mainDiv = document.createElement('div')
+
+		mainDiv.id = 'divTP2';
+
+		// On crée tous les noeuds textuels, pour plus de facilité
+
+		var Languages = [
+
+
+		document.createTextNode('Javascript'),
+		document.createTextNode('Jscript'),
+		document.createTextNode('ActionScript'),
+		document.createTextNode('EX4')
+
+		];
+
+		// On crée le paragraphe 
+
+		var paragraph = document.createElement('p');
+		var paragraphText = document.createTextNode('Languages basés sur ECMAScript :');
+
+		paragraph.appendChild(paragraphText);
+
+
+		// On crée la liste, et on boucle pour ajouter chaque item
+
+		var uList = document.createElement('ul'),
+
+			uItem;
+
+		for(var i = 0, c = Languages.length; i < c; i++){
+			uItem = document.createElement('li');
+
+			uItem.appendChild(Languages[i]);
+			uList.appendChild(uItem);
+		}
+
+		// On insére le tout dans mainDiv
+
+		mainDiv.appendChild(paragraph);
+		mainDiv.appendChild(uList);
+
+		// On insére mainDiv dans le <body>
+
+		document.body.appendChild(mainDiv);
+
+
+
+	</script>
+
+</body>
+</html>
