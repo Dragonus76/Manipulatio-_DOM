@@ -37,5 +37,66 @@
 
 	</div>
 
+	<script type="text/javascript">
+		
+		// On crée l'élément du conteneur
+
+		var mainDiv =  document.createElement('div');
+		mainDiv = 'divTP3'
+
+		// On place le texte dans des objets, eux mémes placés dans un tableaux 
+		// Par facilité, la création des noeuds textuels se fera dans la boucle
+
+		var languages = [{
+
+			t: 'javascript',
+			d: 'javascript est un Languages de programmation de script principalement utilisé dans les pages web interactives mais aussi coté serveur .'},{
+
+				t: 'Jscript',
+				d:  'Jscript est le nom générique de plusieurs implémentations d\'ECMAScript 3 créés par Microsoft'
+			},{
+
+				t: 'ActionScript',
+				d: 'ActionScript est le lenagauges de programmation utilisés au sein d\'applications clientes (Abode Flash, Abode Flex) et serveur (Flash maedia server, Jrun, Macromedia Generator.)'
+			},{
+
+
+
+				T: 'EX4',
+				d: 'ECMAScript for XML (E4X) est une extention XML au Languages ECMAScript.'
+
+		}] ;
+
+		// On crée le paragraphe 
+
+		var paragraph = document.createElement('p');
+		var paragraphText = document.createTextNode('langages basés sur ECMAScript :');
+
+		paragraph.appendChild(paragraphText);
+
+		// On crée la liste, et on boucle pour ajouter chaque item
+
+		var defList = document.createElement('dl'),
+			defTern = defTernText,
+			defDefn = defDefnText;
+
+		for(var i = 0, c = Languages.length; i < c; i++){
+
+			defTern = document.createElement('dt');
+			defDefn = document.createElement('dd');
+
+
+			defTernText = document.createTextNode(languages[i].t);
+			defDefnText = document.createTextNode(Languages[i].d);
+
+
+			defTern.appendChild(defTernText);
+			defDefn.appendChild(defDefnText);
+
+
+
+		}
+	</script>
+
 </body>
 </html>
