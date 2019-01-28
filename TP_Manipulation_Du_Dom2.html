@@ -6,6 +6,8 @@
 </head>
 <body>
 
+	<!--
+
 	<div id="divTP3">
 
 		<p>Languages basés sur EMCAScript</p>
@@ -36,13 +38,14 @@
 
 
 	</div>
+-->
 
 	<script type="text/javascript">
 		
 		// On crée l'élément du conteneur
 
 		var mainDiv =  document.createElement('div');
-		mainDiv = 'divTP3'
+		mainDiv.id = 'divTP3';
 
 		// On place le texte dans des objets, eux mémes placés dans un tableaux 
 		// Par facilité, la création des noeuds textuels se fera dans la boucle
@@ -77,25 +80,33 @@
 		// On crée la liste, et on boucle pour ajouter chaque item
 
 		var defList = document.createElement('dl'),
-			defTern = defTernText,
-			defDefn = defDefnText;
+			defTerm, defTermText,
+			defDefn,  defDefnText;
 
-		for(var i = 0, c = Languages.length; i < c; i++){
+		for(var i = 0, c = languages.length; i < c; i++){
 
-			defTern = document.createElement('dt');
+			defTerm = document.createElement('dt');
 			defDefn = document.createElement('dd');
 
 
-			defTernText = document.createTextNode(languages[i].t);
-			defDefnText = document.createTextNode(Languages[i].d);
+			defTermText = document.createTextNode(languages[i].t);
+			defDefnText = document.createTextNode(languages[i].d);
 
 
-			defTern.appendChild(defTernText);
+			defTerm.appendChild(defTermText);
 			defDefn.appendChild(defDefnText);
 
-
+			defList.appendChild(defTerm);
+			defList.appendChild(defDefn);
 
 		}
+
+		// On insére le tout dans mainDiv
+		mainDiv.appendChild(paragraph);
+		mainDiv.appendChild(defList);
+
+		// On insére mainDiv dans le <body>
+		document.body.appendChild(mainDiv);
 	</script>
 
 </body>
